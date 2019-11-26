@@ -36,6 +36,5 @@ module.exports = {
         } catch (e) {
             return console.log(`ERROR: ${e.message}`)
         }
-        test
     }
 }
