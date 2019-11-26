@@ -53,5 +53,17 @@ module.exports = {
         } catch (e) {
             console.log(`ERROR: ${e.message}`)
         }
+        
+        message.react('👍').then(() => message.react('👎'));
+
+            const collector = this.msg.createReactionCollector((r, u) => u.id == uid, {time: this.time});
+            this.collector = collector;
+            collector.on('collect', r => {
+                if(r.emoji.name == this.reactions.stop) {
+                    then(msg => {
+                        msg.delete(2500)
+                    })
+                }
+            }
     }
 }
