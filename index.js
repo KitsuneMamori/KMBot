@@ -48,14 +48,13 @@ client.on("ready", () => {
 
     setInterval(function () {
         let status = statuses[Math.floor(Math.random() * statuses.length)];
-    }, 10000);
-    client.user.setPresence({
-        status: "online",
-        game: {
-            name: status,
-            type: "STREAMING"
-        }
-
+        client.user.setPresence({
+            status: "online",
+            game: {
+                name: status,
+                type: "STREAMING"
+            }
+        }, 10000);
     });
 });
 
