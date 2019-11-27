@@ -41,7 +41,7 @@ config({
     require(`./handler/${handler}`)(client);
 });
 
-const statuses = ['I\'m now online 24/7!', 'Am oh Holy Thor Lord of da Shotgun', 'https://discord.gg/byBFT3s'];
+const statuses = ['I\'m now online 24/7!', 'Am oh Holy Thor Lord of da Shotgun', 'https://discord.gg/byBFT3s', `Type 'prefix?' in chat for the prefix!`];
 
 client.on("ready", () => {
     console.log(`Hi, ${client.user.username} is now online!`);
