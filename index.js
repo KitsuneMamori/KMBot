@@ -36,13 +36,19 @@ config({
     require(`./handler/${handler}`)(client);
 });
 
+const statuses = ['I\'m now online 24/7!', 'Am oh Holy Thor Lord of da Shotgun', 'https://discord.gg/byBFT3s'];
+
 client.on("ready", () => {
     console.log(`Hi, ${client.user.username} is now online!`);
+
+    setInterval(function() {
+        let status = statuses[Math.floor(Math.random()*statuses.length)];
+    }, 10000);
 
     client.user.setPresence({
         status: "online",
         game: {
-            name: "me getting developed",
+            name: status,
             type: "STREAMING"
         }
     }); 
