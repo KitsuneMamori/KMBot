@@ -48,15 +48,21 @@ client.on("ready", () => {
 
     setInterval(function () {
         let status = statuses[Math.floor(Math.random() * statuses.length)];
-        client.user.setPresence({
-            status: "online",
-            game: {
-                name: status,
-                type: "STREAMING"
-            }
+        client.user.setPresence({ 
+            activity: { 
+                name: status 
+            }, 
+            status: 'online'});
+
+        // client.user.setPresence({
+        //     status: "online",
+        //     game: {
+        //         name: status,
+        //         type: "STREAMING"
+        //     }
         }, 10000);
     });
-});
+// });
 
 client.on("message", async message => {
     const prefix = config_json.prefix;
