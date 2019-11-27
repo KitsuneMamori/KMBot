@@ -47,15 +47,14 @@ client.on("ready", () => {
     console.log(`Hi, ${client.user.username} is now online!`);
 
     setInterval(function () {
-        let status = statuses[Math.floor(Math.random() * statuses.length)];
-        client.user.setPresence({ 
-            activity: { 
-                name: status 
-            }, 
-            status: 'online'
-        }, 10000);
+        let status = statuses[Math.floor(Math.random()*statuses.length)];
+            client.user.setPresence({ 
+                game: { 
+                    name: status 
+                }, 
+                status: 'online'});
+        }, 10000)
     });
-});
 
 client.on("message", async message => {
     const prefix = config_json.prefix;
