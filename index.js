@@ -55,7 +55,7 @@ client.on("ready", () => {
             status: 'online'
         }, 10000);
     });
-// });
+});
 
 client.on("message", async message => {
     const prefix = config_json.prefix;
