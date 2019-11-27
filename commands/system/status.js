@@ -1,6 +1,6 @@
 module.exports = {
     name: "status",
-    category: "info",
+    category: "system",
     description: "Displays the status of the bot",
     run: async (client, message, args) => {
         try {
