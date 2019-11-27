@@ -6,8 +6,6 @@ module.exports = {
         try {
             const ud = require('urban-dictionary')
             const Discord = require('discord.js');
-            const fetch = require('node-fetch');
-            const querystring = require('querystring');
 
             var color_orange = 16752384;
 
@@ -20,51 +18,44 @@ module.exports = {
 
             var definition = args[0];
 
-            // if (!definition) {
-            //     message.channel.send(missingArgsEmbed)
-            //     return
-            // }
-
-            // // Callback example.
-            // ud.term(definition, (error, entries, tags, sounds) => {
-            //     if (error) {
-            //         console.error(error.message)
-            //     } else {
-
-            //     }
-            // })
-
-            // // Promise example.
-            // ud.term(definition)
-            //     .then((result) => {
-            //         const entries = result.entries
-            //         message.channel.send(`**Word:** ${entries[0].word}`)
-            //         message.channel.send(`**Definition:** ${entries[0].definition}`)
-            //         message.channel.send(`**Example:** ${entries[0].example}`)
-            //     }).catch((error) => {
-            //         console.error(error.message)
-            //     })
-
-            const query = querystring.stringify({ term: args.join(' ') });
-            const { list } = await fetch(`https://api.urbandictionary.com/v0/define?${query}`).then(response => response.json());
-
-            if (!list.length) {
-                return message.channel.send(`No results found for **${args.join(' ')}**.`);
+            if (!definition) {
+                message.channel.send(missingArgsEmbed)
+                return
             }
 
-            const trim = (str, max) => (str.length > max ? `${str.slice(0, max - 3)}...` : str);
-            const [answer] = list;
+            // Callback example.
+            ud.term(definition, (error, entries, tags, sounds) => {
+                if (error) {
+                    console.error(error.message)
+                } else {
 
-            const embed = new RichEmbed()
-			.setColor('#E95928')
-			.setTitle(answer.word)
-			.setURL(answer.permalink)
-			.addField('Definition', trim(answer.definition, 1024))
-			.addField('Example', trim(answer.example, 1024))
-            .addField('Rating', `${answer.thumbs_up} thumbs up. ${answer.thumbs_down} thumbs down.`);
+                }
+            })
 
-            message.channel.send(embed);
+            // Promise example.
+            ud.term(definition)
+                .then((result) => {
+                    const entries = result.entries
+                    const embed = new Discord.MessageEmbed()
+                    const [answer] = list
+                    .setColor('#EFFF00')
+                    .setTitle(answer.word)
+                    .setURL(answer.permalink)
+                    .addField('Definition', trim(answer.definition, 1024))
+                    .addField('Example', trim(answer.example, 1024))
+                    .addField('Rating', `${answer.thumbs_up} thumbs up. ${answer.thumbs_down} thumbs down.`);
+                    // message.channel.send(`**Word:** ${entries[0].word}`)
+                    // message.channel.send(`**Definition:** ${entries[0].definition}`)
+                    // message.channel.send(`**Example:** ${entries[0].example}`)
 
+                    message.channel.send(embed);
+                    
+                }).catch((error) => {
+                    console.error(error.message)
+                })
+
+            
+            
         } catch (e) {
             console.log(`ERROR: ${e.message}`)
         }
