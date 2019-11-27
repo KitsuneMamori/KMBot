@@ -33,29 +33,29 @@ module.exports = {
             })
 
             // Promise example.
-            ud.term(definition)
-                .then((result) => {
-                    const entries = result.entries
-                    const embed = new Discord.MessageEmbed()
-                    const [answer] = list
-                    .setColor('#EFFF00')
-                    .setTitle(answer.word)
-                    .setURL(answer.permalink)
-                    .addField('Definition', trim(answer.definition, 1024))
-                    .addField('Example', trim(answer.example, 1024))
-                    .addField('Rating', `${answer.thumbs_up} thumbs up. ${answer.thumbs_down} thumbs down.`);
-                    // message.channel.send(`**Word:** ${entries[0].word}`)
-                    // message.channel.send(`**Definition:** ${entries[0].definition}`)
-                    // message.channel.send(`**Example:** ${entries[0].example}`)
+            const querystring = require('querystring');
+            const fetch = require('node-fetch');
 
-                    message.channel.send(embed);
-                    
-                }).catch((error) => {
-                    console.error(error.message)
-                })
+            const query = querystring.stringify({
+                term: args.join(' ')
+            });
+            const {
+                list
+            } = await fetch(`https://api.urbandictionary.com/v0/define?${query}`).then(response => response.json());
 
-            
-            
+            const [answer] = list;
+            const trim = (str, max) => (str.length > max ? `${str.slice(0, max - 3)}...` : str);
+
+            const embed = new Discord.RichEmbed()
+                .setColor('#F25C2D')
+                .setTitle(answer.word)
+                .setURL(answer.permalink)
+                .addField('Definition', trim(answer.definition, 1024))
+                .addField('Example', trim(answer.example, 1024))
+                .addField('Rating', `${answer.thumbs_up} 👍   /   ${answer.thumbs_down} 👎`);
+
+            message.channel.send(embed);
+
         } catch (e) {
             console.log(`ERROR: ${e.message}`)
         }
