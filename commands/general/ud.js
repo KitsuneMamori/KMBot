@@ -8,7 +8,6 @@ module.exports = {
             const Discord = require('discord.js');
             const fetch = require('node-fetch');
             const querystring = require('querystring');
-            const trim = (str, max) => (str.length > max ? `${str.slice(0, max - 3)}...` : str);
 
             var color_orange = 16752384;
 
@@ -53,9 +52,10 @@ module.exports = {
                 return message.channel.send(`No results found for **${args.join(' ')}**.`);
             }
 
+            const trim = (str, max) => (str.length > max ? `${str.slice(0, max - 3)}...` : str);
             const [answer] = list;
 
-            const embed = new Discord.MessageEmbed()
+            const embed = new RichEmbed()
 			.setColor('#E95928')
 			.setTitle(answer.word)
 			.setURL(answer.permalink)
