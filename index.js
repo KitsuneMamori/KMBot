@@ -52,14 +52,7 @@ client.on("ready", () => {
             activity: { 
                 name: status 
             }, 
-            status: 'online'});
-
-        // client.user.setPresence({
-        //     status: "online",
-        //     game: {
-        //         name: status,
-        //         type: "STREAMING"
-        //     }
+            status: 'online'
         }, 10000);
     });
 // });
