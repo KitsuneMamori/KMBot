@@ -18,6 +18,7 @@ module.exports = {
                 .addField('Special thanks to:', `${thanks}`)
                 .setColor(color_main)
 
+            message.delete();
             message.channel.send(embed)
                 .then(message => {
                     message.delete(10000)

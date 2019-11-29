@@ -4,7 +4,7 @@ module.exports = {
     description: "Displays the admin help menu",
     run: async (client, message, args) => {
         try {
-            message.delete(5000);
+            message.delete();
 
             const Discord = require('discord.js');
 

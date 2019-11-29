@@ -8,6 +8,8 @@ module.exports = {
             const Discord = require('discord.js');
             var color_main = '0xE000FF';
 
+            message.delete();
+
             new rm.menu(message.channel, message.author.id, [
                 new Discord.RichEmbed()
                 .setColor(color_main)

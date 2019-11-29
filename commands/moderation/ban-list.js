@@ -19,6 +19,8 @@ module.exports = {
                 .setDescription('You need to be an Admin to use this command!')
                 .setTimestamp();
 
+            message.delete();
+
             if (!message.member.roles.some(r => ["Admins", "Overlord"].includes(r.name))) {
                 return message.channel.send(missingPermissionsEmbed)
                     .then(message => {

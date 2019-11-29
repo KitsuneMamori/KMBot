@@ -43,9 +43,12 @@ module.exports = {
                 .addField('DO NOT', 'Do not send the Admin who warned you a message about it, this will result in an official warning/ban')
                 .setTimestamp();
             mentioned.send(warningEmbed); // DMs the user the above embed!
+
+            const user = message.mentions.members.first() || message.guild.members.get(args[0]);
+
             var warnSuccessfulEmbed = new Discord.RichEmbed()
                 .setColor(color_green)
-                .setTitle(`${mentioned} Successfully Warned!`)
+                .setTitle(`${user} Successfully Warned!`)
                 .addField('Reason', reason)
             message.channel.send(warnSuccessfulEmbed);
             message.delete();

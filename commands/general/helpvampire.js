@@ -7,7 +7,9 @@ module.exports = {
             const rm = require('discord.js-reaction-menu');
             const Discord = require('discord.js');
             var color_red = 16711710;
-            
+
+            message.delete();
+
             new rm.menu(message.channel, message.author.id, [
                 
                 // ========== PAGE 1 ========== //
