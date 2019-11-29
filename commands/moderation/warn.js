@@ -42,16 +42,31 @@ module.exports = {
                 .addField('If you do not agree with the warning', 'Message the Overlord in DM with a screenshot of this warning and your reasoning')
                 .addField('DO NOT', 'Do not send the Admin who warned you a message about it, this will result in an official warning/ban')
                 .setTimestamp();
-            mentioned.send(warningEmbed); // DMs the user the above embed!
+            //mentioned.send(warningEmbed); // DMs the user the above embed!
 
-            const user = message.mentions.members.first() || message.guild.members.get(args[0]);
+            const taggedPerson = message.mentions.members.first() || message.guild.members.get(args[0]);
 
             var warnSuccessfulEmbed = new Discord.RichEmbed()
                 .setColor(color_green)
-                .setTitle(`${user} Successfully Warned!`)
+                .setTitle(`${mentioned.username} Successfully Warned!`)
+                .setDescription(`${mentioned.tag} / ${mentioned.id}`)
+                .setThumbnail(taggedPerson.user.displayAvatarURL)
                 .addField('Reason', reason)
+                .setTimestamp()
             message.channel.send(warnSuccessfulEmbed);
             message.delete();
+
+            const logChannel = message.guild.channels.find(channel => channel.name === "warnings") || message.channel;
+            var warnSuccessfulEmbedLogs = new Discord.RichEmbed()
+                .setColor(color_green)
+                .setTitle(`${mentioned.username} has been successfully warned!`)
+                .setDescription(`${mentioned.tag} / ${mentioned.id}`)
+                .setThumbnail(taggedPerson.user.displayAvatarURL)
+                .addField('Reason', reason)
+                .addField(`Warned by:`, `${message.author.tag}`)
+                .setTimestamp()
+            logChannel.send(warnSuccessfulEmbedLogs);
+
         } catch (e) {
             console.log(`ERROR: ${e.message}`)
         }

@@ -17,6 +17,7 @@ module.exports = {
                 .then(message => {
                     message.delete(5000)
                 })
+                message.delete();
         } catch (e) {
             console.log(`ERROR: ${e.message}`)
         }

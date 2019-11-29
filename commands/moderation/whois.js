@@ -7,7 +7,7 @@ module.exports = {
             const Discord = require('discord.js');
             
             var color_red = 16711710;
-            
+
             var missingPermissionsEmbed = new Discord.RichEmbed()
             .setColor(color_red)
             .setAuthor(message.author.username, message.author.avatarURL)
@@ -76,6 +76,8 @@ module.exports = {
                     message.delete(30000)
                 })
             }
+            message.delete();
+
         } catch (e) {
             console.log(`ERROR: ${e.message}`)
         }
