@@ -1,7 +1,7 @@
 module.exports = {
     name: "full-rules",
     category: "info",
-    description: "Displays the server rules",
+    description: "Displays the server punishments",
     run: async (client, message, args) => {
         try {
             const rm = require('discord.js-reaction-menu');
