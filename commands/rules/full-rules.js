@@ -35,7 +35,7 @@ module.exports = {
                     .addField('**Rule number 9:**', 'Rude language will automatically be filtered in the #general chat, because this is not allowed. If you wish to say things in a rude way, go to the #nsfw as there are no rules bound to it!')
                     .addField('**Rule number 10:**', 'This is an English speaking server, so the only accepted language in chats is English. Excluding specific rooms like "French" / "Dutch".')
                     .addField('**Rule number 11:**', 'Do not libel somebody else then yourself. This will result in an *instant* ban.')
-                    .addField('**Rule number 12:**', 'Do not be a Help Vampire (A person who requests answers and solutions from a community while giving nothing in return)RB. Use `RBSW helpvampire` for more info')
+                    .addField('**Rule number 12:**', 'Do not be a Help Vampire (A person who requests answers and solutions from a community while giving nothing in return)RB. Use `RBSW helpvampire` for more info.')
                     .addField('**Rule number 13:**', 'Do not message admins about stuff related to rules/bans/etc. If you have something to say, message the Overlord.')
                     .addField('**Rule number 14:**', 'Some smart boys/girls under us know how to exploit punishments given to them. This is strictly forbidden and will result in a punishment of a higher degree.')
                     .addField('**Rule number 15:**', 'Before you speak, THINK… \n\
