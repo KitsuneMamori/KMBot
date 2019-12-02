@@ -1,5 +1,5 @@
 module.exports = {
-    name: "rules",
+    name: "fullrules",
     category: "info",
     description: "Displays the server rules",
     run: async (client, message, args) => {
