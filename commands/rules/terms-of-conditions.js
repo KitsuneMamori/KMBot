@@ -1,6 +1,6 @@
 module.exports = {
-    name: "invite",
-    category: "info",
+    name: "terms-of-conditions",
+    category: "rules",
     description: "Displays the server invite link",
     run: async (client, message, args) => {
         try {
