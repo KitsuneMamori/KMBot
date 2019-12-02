@@ -90,7 +90,7 @@ client.on('message', async message => {
             message.delete();
             message.channel.send('`RBSW [command]`')
                 .then(message => message.delete(5000));
-            break;
+        break;
     }
 });
 

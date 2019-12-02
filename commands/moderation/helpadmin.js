@@ -39,7 +39,6 @@ module.exports = {
                     .setTitle('__**Admin Help Menu**__')
                     .setDescription('All commands have the prefix RBSW')
                     .setThumbnail('https://media.discordapp.net/attachments/494612992093192212/639017029025660949/MOSHED-2019-10-30-9-23-49.gif')
-
                     .addField('Clear', 'Cleans the chat with a selected number of messages\nUsage: `RBSW clear [amount] (optional:[@user])`')
                     .addField('Whois', 'Shows you information about somebody\nUsage: `RBSW whois [@user]`')
                     .addField('Ban-list', 'Displays all banned users\nUsage: `RBSW ban-list`')
@@ -57,7 +56,6 @@ module.exports = {
                     .addField('Kick', 'Kicks mentioned user from the server\nUsage: `RBSW kick [user] [reason]`')
                     .addField('Mute', 'Mutes the person for a selected amount of time \nUsage: `RBSW mute [person] [duration]`')
                     .addField('Shutdown', 'Shutdowns the bot')
-
                     .setThumbnail('https://media.discordapp.net/attachments/494612992093192212/639017029025660949/MOSHED-2019-10-30-9-23-49.gif')
                     .setFooter('RBSW help menu for admins page 2/3'),
                     

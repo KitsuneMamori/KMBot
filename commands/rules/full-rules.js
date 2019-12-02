@@ -9,7 +9,6 @@ module.exports = {
             var color_main = '0xE000FF';
             message.delete();
 
-
             if (!message.member.roles.some(r => ["Admins", "Overlord"].includes(r.name))) {
                 return message.channel.send(missingPermissionsEmbed)
                     .then(message => {
@@ -18,9 +17,7 @@ module.exports = {
             }
 
             if (message.member.roles.some(r => ["Admins", "Overlord"].includes(r.name))) {
-
                 const embed = new Discord.RichEmbed()
-
                     .setColor(color_main)
                     .setTitle('__**Discord Rules**__')
                     .setDescription('The RBSW rules')
@@ -44,9 +41,9 @@ module.exports = {
                     I - is it Inspiring? \n\
                     N - is it Necessary? \n\
                     K - is it Kind?')
-                    .setFooter('')
+                    .setFooter('Discord Rules')
 
-                    message.channel.send(embed)
+                message.channel.send(embed)
             }
         } catch (e) {
             console.log(`ERROR: ${e.message}`)

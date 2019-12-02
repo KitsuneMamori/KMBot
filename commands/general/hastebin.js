@@ -15,12 +15,8 @@ module.exports = {
         const haste = await hastebin(args.slice(0).join(" "));
 
         hastebin(haste).then(r => {
-
             message.channel.send("`Posted to Hastebin at this URL:`  " + r);
-
         }).catch(console.error);
-
         message.delete(100);
-
     }
 }

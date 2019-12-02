@@ -32,8 +32,6 @@ module.exports = {
             let warnings = JSON.parse(rawdata);
             message.channel.send(warnings);
 
-            
-
         } catch (e) {
             console.log(`ERROR: ${e.message}`)
         }

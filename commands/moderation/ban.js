@@ -15,9 +15,7 @@ module.exports = {
     run: async (client, message, args) => {
         try {
             const logChannel = message.guild.channels.find(channel => channel.name === "logs") || message.channel;
-
             const Discord = require('discord.js');
-
             var color_red = 16711710;
             var color_orange = 16752384;
 

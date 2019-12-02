@@ -9,7 +9,6 @@ module.exports = {
     run: async (client, message, args) => {
         try {
             const Discord = require('discord.js');
-
             var color_red = 16711710;
 
             var missingPermissionsEmbed = new Discord.RichEmbed()

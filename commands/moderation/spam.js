@@ -12,7 +12,6 @@ module.exports = {
             message.delete();
 
             const Discord = require('discord.js');
-
             var color_red = 16711710;
             var color_orange = 16752384;
 

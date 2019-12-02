@@ -11,7 +11,6 @@ module.exports = {
             message.delete();
 
             new rm.menu(message.channel, message.author.id, [
-                
                 // ========== PAGE 1 ========== //
                 new Discord.RichEmbed()
                 .setColor(color_red)
@@ -37,7 +36,6 @@ module.exports = {
                 .setDescription('A Spotter\'s Guide')
                 .setURL('http://slash7.com/2006/12/22/vampires/')
                 .setAuthor('Author: Amy Hoy', 'https://web.archive.org/web/20181124221026/https://www.skidmore.edu/~pdwyer/e/eoc/help_vampire.htm')
-                //.setThumbnail('https://media.discordapp.net/attachments/494612992093192212/648519933201874954/helpvampire.png')
                 .addField("**Identifying Help Vampires**", "Identifying Help Vampires can be tricky, because they look like any ordinary person \
                 (or internet user, whichever is lesser).")
                 .addField("But by closely observing an individual’s behavior using this handy checklist, you too can identify Help Vampires in the field:", "\
@@ -127,10 +125,10 @@ module.exports = {
                 .setURL('http://slash7.com/2006/12/22/vampires/')
                 .setAuthor('Author: Amy Hoy', 'https://web.archive.org/web/20181124221026/https://www.skidmore.edu/~pdwyer/e/eoc/help_vampire.htm')
                 .addField("**Reforming the Help Vampire (e.g. Not You)**", "You’ll get good results by following this action plan for solving your community’s Help Vampire problem: \n\n\
-                    1. Create resources for Help Vampires (and regular folks) to help themselves. \n\
-                    2. Cease all behavior which enables Help Vampires’ vampy behavior. \n\
-                    3. Meet Help Vampires head-on. \n\n\
-                    As you can see, none of these steps endorse violence. There are no stakes, kickboxing moves, or sneaky little ampules of holy water—although witty repartee may be involved.")
+                1. Create resources for Help Vampires (and regular folks) to help themselves. \n\
+                2. Cease all behavior which enables Help Vampires’ vampy behavior. \n\
+                3. Meet Help Vampires head-on. \n\n\
+                As you can see, none of these steps endorse violence. There are no stakes, kickboxing moves, or sneaky little ampules of holy water—although witty repartee may be involved.")
                 .addField("#1: Creating Resources", "If your community’s resources are spread over all the web, not organized or indexed, \
                 and generally harder to navigate than a rat’s nest, then creating a solid help resource should significantly cut down Help Vampire activity. \n\n\
                 At the minimum, create a well-organized, preferably community-edited page which clearly lists the following:")
@@ -182,7 +180,6 @@ module.exports = {
                 mean business, we can change the world—or at least our small section of it.")
                 .setTimestamp()
                 .setFooter('The Help Vampire: Spotter\'s Guide - By: Amy Hoy - Page 6/6'),
-
             ]);
         } catch (e) {
             console.log(`ERROR: ${e.message}`)
