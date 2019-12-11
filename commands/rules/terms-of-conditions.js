@@ -1,6 +1,6 @@
 module.exports = {
     name: "terms-of-conditions",
-    category: "info",
+    category: "rules",
     description: "Displays the server ToC",
     run: async (client, message, args) => {
         try {
