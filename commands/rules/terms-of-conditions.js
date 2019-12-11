@@ -1,7 +1,7 @@
 module.exports = {
-    name: "invite",
+    name: "terms-of-conditions",
     category: "info",
-    description: "Displays the server invite link",
+    description: "Displays the server ToC",
     run: async (client, message, args) => {
         try {
             message.delete();
