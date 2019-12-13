@@ -1,5 +1,6 @@
 module.exports = {
     name: "invite",
+    aliases: ["inv"],
     category: "info",
     description: "Displays the server invite link",
     run: async (client, message, args) => {

@@ -1,5 +1,6 @@
 module.exports = {
     name: "watchtogether",
+    aliases: ["wt"],
     category: "info",
     description: "Displays the server watchtogether link",
     run: async (client, message, args) => {
