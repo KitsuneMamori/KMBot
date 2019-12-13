@@ -1,6 +1,7 @@
 module.exports = {
     name: "ud",
     category: "general",
+    aliases: ["urban-dictionary"],
     description: "displays the urban dictionary",
     run: async (client, message, args) => {
         try {
