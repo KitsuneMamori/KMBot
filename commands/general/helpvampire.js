@@ -1,6 +1,7 @@
 module.exports = {
     name: "helpvampire",
     category: "general",
+    aliases: ["hv"],
     description: "Opens a website",
     run: async (client, message, args) => {
         try {
