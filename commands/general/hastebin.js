@@ -12,7 +12,7 @@ module.exports = {
         if (!args[1]) {
             return message.channel.send("What do you want to post in Hastebin?")
         }
-        const haste = await hastebin(args.slice(0).join(" "));
+        const haste = await hastebin(args.slice(1).join(" "));
 
         hastebin(haste).then(r => {
             message.channel.send("`Posted to Hastebin at this URL:`  " + r);

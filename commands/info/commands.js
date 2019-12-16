@@ -56,6 +56,7 @@ module.exports = {
                 .addField('Love', 'Calculates the love affinity you have for another person.')
                 .addField('Rps', 'Rock Paper Scissors game. React to one of the emojis to play the Rock Paper Scissors game.')
                 .addField('Meme', 'Sends an epic meme.')
+                .addField('Instagram', 'Displays targeted user their instagram.')
                 .setFooter('RBSW commands page 4/4'),
             ])
         } catch (e) {

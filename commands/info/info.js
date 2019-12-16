@@ -6,7 +6,7 @@ module.exports = {
         try {
             const Discord = require('discord.js');
             var author = 'K. Mamori#6666';
-            var thanks = 'ItsTechys#2515'
+            var thanks = 'ItsTechys#2515 \n Eranoid#2937'
             var version = '1.0.6';
             var color_main = '0xE000FF';
 
