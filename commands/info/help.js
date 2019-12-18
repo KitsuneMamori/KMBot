@@ -40,7 +40,7 @@ module.exports = {
                 .setTitle('__**Administrators**__')
                 .setThumbnail('https://media.discordapp.net/attachments/494612992093192212/639017029025660949/MOSHED-2019-10-30-9-23-49.gif')
                 .setDescription('The following people are administrators on this server, contact them if you need any help, support or if you have an issue according this server.')
-                .addField('Owner', '-K. Mamori#6666')
+                .addField('Owner', '- K. Mamori#6666')
                 .addField('Head Admin', '- ItsTechys#2515 / Drondin')
                 .addField('Senior Admins', 'Eranoid#2937 / Morwyn \n PiDgEoN_JeRrY#3040')
                 .addField('Junior Admins', '- kennyiscool159#5928')
