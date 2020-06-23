@@ -26,7 +26,6 @@ module.exports = {
             noShutdown();
         }
 
-
         if (message.member.roles.some(r => ["Overlord"].includes(r.name))) {
             const shutdown = async () => {
                 message.channel.send('YOU BLOODY WOT M... ma...')

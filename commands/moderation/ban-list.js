@@ -9,7 +9,6 @@ module.exports = {
     run: async (client, message, args) => {
         try {
             const Discord = require('discord.js');
-
             var color_red = 16711710;
 
             var missingPermissionsEmbed = new Discord.RichEmbed()
@@ -18,6 +17,8 @@ module.exports = {
                 .setTitle('Insufficient Permissions!')
                 .setDescription('You need to be an Admin to use this command!')
                 .setTimestamp();
+
+            message.delete();
 
             if (!message.member.roles.some(r => ["Admins", "Overlord"].includes(r.name))) {
                 return message.channel.send(missingPermissionsEmbed)

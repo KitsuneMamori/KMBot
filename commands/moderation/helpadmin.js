@@ -4,7 +4,7 @@ module.exports = {
     description: "Displays the admin help menu",
     run: async (client, message, args) => {
         try {
-            message.delete(5000);
+            message.delete();
 
             const Discord = require('discord.js');
 
@@ -39,25 +39,22 @@ module.exports = {
                     .setTitle('__**Admin Help Menu**__')
                     .setDescription('All commands have the prefix RBSW')
                     .setThumbnail('https://media.discordapp.net/attachments/494612992093192212/639017029025660949/MOSHED-2019-10-30-9-23-49.gif')
-
-                    .addField('Clear', 'Cleans the chat with a selected number of messages\nUsage: `RBSW clear [amount] (optional:[@user])`')
-                    .addField('Whois', 'Shows you information about somebody\nUsage: `RBSW whois [@user]`')
                     .addField('Ban-list', 'Displays all banned users\nUsage: `RBSW ban-list`')
                     .addField('Ban', 'Bans tagged member\nUsage: `RBSW ban [@user] [reason]`')
-                    .addField('Warn', 'Warns the target membern\nUsage: `RBSW warn [@user] [Reason]`')
+                    .addField('Clear', 'Cleans the chat with a selected number of messages\nUsage: `RBSW clear [amount] (optional:[@user])`')
+                    .addField('Kick', 'Kicks mentioned user from the server\nUsage: `RBSW kick [user] [reason]`')
+                    .addField('Mute', 'Mutes the person for a selected amount of time \nUsage: `RBSW mute [person] [duration]`')
                     .setFooter('RBSW help menu for admins page 1/3'),
-
+                    
                     new Discord.RichEmbed()
                     .setColor(color_main)
                     .setTitle('__**Admin Help Menu**__')
                     .setDescription('All commands have the prefix RBSW')
-                    .addField('Whois', 'Displays user information\nUsage: `RBSW whois [@user]`')
                     .addField('Say', 'Says your input via the bot\nUsage: `RBSW say (optional:[embed]) [message]`')
                     .addField('Spam', 'Says your input x times via the bot\nUsage: `RBSW spam [amount] (optional:[embed]) [message]`')
-                    .addField('Kick', 'Kicks mentioned user from the server\nUsage: `RBSW kick [user] [reason]`')
-                    .addField('Mute', 'Mutes the person for a selected amount of time \nUsage: `RBSW mute [person] [duration]`')
-                    .addField('Shutdown', 'Shutdowns the bot')
-
+                    .addField('Unmute', 'Unmutes the person \nUsage: RBSW unmute [@user]`')
+                    .addField('Userid', 'Gets user ID\nUsage: `RBSW userid [@user]')
+                    .addField('Warn', 'Warns the target membern\nUsage: `RBSW warn [@user] [Reason]`')
                     .setThumbnail('https://media.discordapp.net/attachments/494612992093192212/639017029025660949/MOSHED-2019-10-30-9-23-49.gif')
                     .setFooter('RBSW help menu for admins page 2/3'),
                     
@@ -65,8 +62,10 @@ module.exports = {
                     .setColor(color_main)
                     .setTitle('__**Admin Help Menu**__')
                     .setDescription('All commands have the prefix RBSW')
-                    .addField('Shutdown', 'Shutdowns the bot')
-                    .addField('Unmute', 'Unmutes the person \nUsage: RBSW unmute [@user]`')
+                    .addField('Shutdown', 'Shuts the bot down. Remember that the bot is being hosted online and will directly restart if this command is executed\nUsage: `RBSW shutdown`')
+                    .addField('Whois', 'Displays user information\nUsage: `RBSW whois [@user]`')
+                    .addField('Status', 'Displays if the bot is online\nUsage: `RBSW status`')
+                    .addField('Rule-[number]', 'Displays a specific server rule\nUsage: `RBSW rule-[number]`\n *example: RBSW rule-15*')
                     .setThumbnail('https://media.discordapp.net/attachments/494612992093192212/639017029025660949/MOSHED-2019-10-30-9-23-49.gif')
                     .setFooter('RBSW help menu for admins page 3/3'),
                 ])

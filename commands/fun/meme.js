@@ -16,6 +16,7 @@ module.exports = {
             .setTitle(`From /r/${random}`)
             .setURL(`https://reddit.com/r/${random}`);
 
+        message.delete();
         message.channel.send(embed);
     }
 }

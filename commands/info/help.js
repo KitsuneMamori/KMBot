@@ -23,7 +23,7 @@ module.exports = {
                 .addField('**5.** Arguments', 'Arguments between members must be discussed in private and not in public.')
                 .addField('**6.** NSFW', 'Keep NSFW in #nsfw channel, as some people may be scrolling discord while at work.')
                 .addField('**7.** No rude language', 'No rude language, this will automatically be filtered in the #general chat')
-                .setFooter('RBSW help menu page 1'),
+                .setFooter('RBSW help menu page 1/3'),
 
                 new Discord.RichEmbed()
                 .setColor(color_main)
@@ -33,18 +33,19 @@ module.exports = {
                 .addField('Help', 'This will open up the menu which you are currently interacting with')
                 .addField('Info', 'This will open information about the bot')
                 .addField('Commands', 'Opens up the menu which you are currently interacting with')
-                .setFooter('RBSW help menu page 2'),
+                .setFooter('RBSW help menu page 2/3'),
 
                 new Discord.RichEmbed()
                 .setColor(color_main)
                 .setTitle('__**Administrators**__')
                 .setThumbnail('https://media.discordapp.net/attachments/494612992093192212/639017029025660949/MOSHED-2019-10-30-9-23-49.gif')
                 .setDescription('The following people are administrators on this server, contact them if you need any help, support or if you have an issue according this server.')
-                .addField('Owner', '-K. Mamori#6666')
-                .addField('Head Admin', '- ItsTechys#2515 / Drondin')
-                .addField('Senior Admins', 'Eranoid#2937 / Morwyn')
-                .addField('Junior Admins', '- Hoopcha#6894 \n- Tuckky#6518 \n- kennyiscool159#5928')
-                .setFooter('RBSW help menu page 3'),
+                .addField('Owner', '- K. Mamori#6666')
+                .addField('Head Admin', '- None')
+                .addField('Senior Admins', '- PiDgEoN_JeRrY#3040 & GodlikeMarkus#5107')
+                .addField('Junior Admins', '- kennyiscool159#5928')
+                .addField('Trial Admins', '- None')
+                .setFooter('RBSW help menu page 3/3'),
 
                 // new Discord.RichEmbed()
                 // .setTitle('__**Test**__')

@@ -1,5 +1,10 @@
-const { Client, Collection } = require("discord.js");
-const { config } = require("dotenv");
+const {
+    Client,
+    Collection
+} = require("discord.js");
+const {
+    config
+} = require("dotenv");
 const fs = require("fs");
 const Discord = require("discord.js");
 const bot = new Discord.Client();
@@ -19,13 +24,13 @@ const http = require('http');
 const express = require('express');
 const app = express();
 app.get("/", (request, response) => {
-  console.log(Date.now() + " Ping Received");
-  response.sendStatus(200);
+    console.log(Date.now() + " Ping Received");
+    response.sendStatus(200);
 });
 
 app.listen(process.env.PORT);
 setInterval(() => {
-  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+    http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 }, 280000);
 
 config({
@@ -36,17 +41,20 @@ config({
     require(`./handler/${handler}`)(client);
 });
 
+const statuses = ['I\'m now online 24/7!', 'Am oh Holy Thor Lord of da Shotgun', 'https://discord.gg/byBFT3s', `Type 'prefix?' in chat for the prefix!`];
+
 client.on("ready", () => {
     console.log(`Hi, ${client.user.username} is now online!`);
 
-    client.user.setPresence({
-        status: "online",
-        game: {
-            name: "me getting developed",
-            type: "STREAMING"
-        }
-    }); 
-});
+    setInterval(function () {
+        let status = statuses[Math.floor(Math.random()*statuses.length)];
+            client.user.setPresence({ 
+                game: { 
+                    name: status 
+                }, 
+                status: 'online'});
+        }, 10000)
+    });
 
 client.on("message", async message => {
     const prefix = config_json.prefix;
@@ -58,30 +66,30 @@ client.on("message", async message => {
 
     const args = message.content.slice(prefix.length).split(/ +/g);
     const cmd = args.shift().toLowerCase();
-    
+
     if (cmd.length === 0) return;
-    
+
     let command = client.commands.get(cmd);
     if (!command) command = client.commands.get(client.aliases.get(cmd));
 
-    if (command) 
+    if (command)
         command.run(client, message, args);
 });
 
 client.on('message', async message => {
     if (message.author.bot) return;
-    
+
     const args = message.content.split(/ +/g);
-    
+
     if (args[1]) {
         return
     }
-    
+
     switch (args[0].toLowerCase()) {
         case 'prefix?':
             message.delete();
             message.channel.send('`RBSW [command]`')
-            .then(message => message.delete(5000));
+                .then(message => message.delete(5000));
         break;
     }
 });

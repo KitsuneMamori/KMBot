@@ -6,7 +6,7 @@ module.exports = {
         try {
             const Discord = require('discord.js');
             var author = 'K. Mamori#6666';
-            var thanks = 'ItsTechys#2515'
+            var thanks = 'ItsTechys#2515 \n PiDgEoN_JeRrY#3040'
             var version = '1.0.6';
             var color_main = '0xE000FF';
 
@@ -18,6 +18,7 @@ module.exports = {
                 .addField('Special thanks to:', `${thanks}`)
                 .setColor(color_main)
 
+            message.delete();
             message.channel.send(embed)
                 .then(message => {
                     message.delete(10000)

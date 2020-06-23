@@ -6,7 +6,7 @@ module.exports = {
         try {
             const msg = await message.channel.send(`🏓 Pinging....`);
             message.delete()
-            
+
             msg.edit(`🏓 Pong!
             Latency is ${Math.floor(msg.createdTimestap - message.createdTimestap)}ms
             API Latency is ${Math.round(client.ping)}ms`);
