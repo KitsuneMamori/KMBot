@@ -21,7 +21,7 @@ module.exports = {
             .setDescription('Usage: RBSW whois [@user]')
             .setTimestamp();
 
-            if (!message.member.roles.some(r => ["Overlord", "Admins"].includes(r.name))) {
+            if (!message.member.roles.some(r => ["Overlord", "Admins", "Waste Of Space"].includes(r.name))) {
                 return message.channel.send(missingPermissionsEmbed)
                 .then(message => {
                     message.delete(5000)

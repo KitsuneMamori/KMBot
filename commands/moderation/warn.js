@@ -39,10 +39,10 @@ module.exports = {
                 .setTitle(`You've been warned in ${message.guild.name}`)
                 .addField('Warned by', message.author.tag)
                 .addField('Reason', reason)
-                .addField('If you do not agree with the warning', 'Message the Overlord in DM with a screenshot of this warning and your reasoning')
+                .addField('If you do not agree with the warning', 'Message the Owner in DM with a screenshot of this warning and your reasoning')
                 .addField('DO NOT', 'Do not send the Admin who warned you a message about it, this will result in an official warning/ban')
                 .setTimestamp();
-            //mentioned.send(warningEmbed); // DMs the user the above embed!
+            mentioned.send(warningEmbed); // DMs the user the above embed!
 
             const taggedPerson = message.mentions.members.first() || message.guild.members.get(args[0]);
 

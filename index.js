@@ -84,14 +84,14 @@ client.on('message', async message => {
     if (args[1]) {
         return
     }
-
     switch (args[0].toLowerCase()) {
-        case 'prefix?':
+        case 'Sphinx':
             message.delete();
-            message.channel.send('`RBSW [command]`')
-                .then(message => message.delete(5000));
+            message.channel.send('Invalid name! Autocorrection: SphinZ')
         break;
+
     }
+
 });
 
 client.login(process.env.TOKEN);

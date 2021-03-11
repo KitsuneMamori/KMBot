@@ -42,8 +42,8 @@ module.exports = {
                 .setDescription('The following people are administrators on this server, contact them if you need any help, support or if you have an issue according this server.')
                 .addField('Owner', '- K. Mamori#6666')
                 .addField('Head Admin', '- None')
-                .addField('Senior Admins', '- PiDgEoN_JeRrY#3040 & GodlikeMarkus#5107')
-                .addField('Junior Admins', '- kennyiscool159#5928')
+                .addField('Senior Admins', '- ItsTechys#2515, PiDgEoN_JeRrY#3040, GodlikeMarkus#5107')
+                .addField('Junior Admins', '- kennyiscool159#5928, Wouter#1099, moreno#3883')
                 .addField('Trial Admins', '- None')
                 .setFooter('RBSW help menu page 3/3'),
 

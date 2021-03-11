@@ -33,7 +33,7 @@ module.exports = {
                 .setDescription('You need to be an Admin to use this command!')
                 .setTimestamp();
 
-            if (!message.member.roles.some(r => ["Admins", "Overlord"].includes(r.name))) {
+            if (!message.member.roles.some(r => ["Senior Admin", "Head Admin", "Overlord"].includes(r.name))) {
                 return message.channel.send(missingPermissionsEmbed)
                     .then(message => {
                         message.delete(5000)
@@ -44,7 +44,7 @@ module.exports = {
                 return message.reply("You don't have the required permissions to use this command.")
                     .then(m => m.delete(5000));
 
-            if (message.member.roles.some(r => ["Admins", "Overlord"].includes(r.name))) {
+            if (message.member.roles.some(r => ["Senior Admin", "Head Admin", "Overlord"].includes(r.name))) {
                 if (message.deletable) message.delete();
             }
 

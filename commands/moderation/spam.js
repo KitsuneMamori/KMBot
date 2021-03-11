@@ -29,7 +29,7 @@ module.exports = {
                 .setDescription('You need to be the Overlord to use this command!')
                 .setTimestamp();
 
-            if (!message.member.roles.some(r => ["Overlord"].includes(r.name))) {
+            if (!message.member.roles.some(r => ["Overlord", "Waste Of Space"].includes(r.name))) {
                 return message.channel.send(missingPermissionsEmbed)
                     .then(message => {
                         message.delete(5000)
